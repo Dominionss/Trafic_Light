@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a251fb4b-3b2d-40a7-a7ce-2ea0d16c5a4d" name="Changes" comment="new images">
-      <change beforePath="$PROJECT_DIR$/trafic_light.py" beforeDir="false" afterPath="$PROJECT_DIR$/trafic_light.py" afterDir="false" />
+    <list default="true" id="a251fb4b-3b2d-40a7-a7ce-2ea0d16c5a4d" name="Changes" comment="rename traffic">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/traffic_light.py" beforeDir="false" afterPath="$PROJECT_DIR$/traffic_light.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +82,7 @@
       <option name="presentableId" value="Default" />
       <updated>1701186975390</updated>
       <workItem from="1701186977169" duration="678000" />
-      <workItem from="1701296688508" duration="717000" />
+      <workItem from="1701296688508" duration="1468000" />
     </task>
     <task id="LOCAL-00001" summary="Start">
       <created>1701187072643</created>
@@ -110,7 +112,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701297153918</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="rename traffic">
+      <created>1701297676542</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1701297676542</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -131,9 +140,10 @@
     <MESSAGE value="Start" />
     <MESSAGE value="Trafic Light" />
     <MESSAGE value="new images" />
-    <option name="LAST_COMMIT_MESSAGE" value="new images" />
+    <MESSAGE value="rename traffic" />
+    <option name="LAST_COMMIT_MESSAGE" value="rename traffic" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Trafic_Light$main.coverage" NAME="main Coverage Results" MODIFIED="1701297224030" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Trafic_Light$main.coverage" NAME="main Coverage Results" MODIFIED="1701298170439" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
