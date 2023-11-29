@@ -1,5 +1,5 @@
 import pygame
-from trafic_light import TraficLight
+from traffic_light import TrafficLight
 
 pygame.init()
 
