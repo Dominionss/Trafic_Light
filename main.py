@@ -38,11 +38,17 @@ while True:
 
         elif event.type == pygame.KEYDOWN:
             if event.key == pygame.K_1:
-                pass
+                for traffic_light in TrafficLights:
+                    if traffic_light.selected:
+                        traffic_light.change_state("red")
             elif event.key == pygame.K_2:
-                pass
+                for traffic_light in TrafficLights:
+                    if traffic_light.selected:
+                        traffic_light.change_state("yellow")
             elif event.key == pygame.K_3:
-                pass
+                for traffic_light in TrafficLights:
+                    if traffic_light.selected:
+                        traffic_light.change_state("green")
 
     pygame.display.update()
     screen.blit(MAP, (0, 0))

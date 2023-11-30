@@ -30,3 +30,5 @@ class TrafficLight:
             self.image = pygame.image.load("images/light/traffic_light_green.png")
         self.image = pygame.transform.scale(self.image, (self.width, self.height))
 
+    def change_state(self, new_state):
+        self.state = new_state
