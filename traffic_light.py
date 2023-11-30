@@ -12,8 +12,21 @@ class TrafficLight:
         self.propertyOfHitbox = {"x1": self.x + 37, "y1": self.y + 20, "x2": self.width - 74, "y2": self.height - 50}
         self.hitbox = pygame.Rect(self.propertyOfHitbox["x1"], self.propertyOfHitbox["y1"], self.propertyOfHitbox["x2"], self.propertyOfHitbox["y2"])
         self.hitboxColor = "purple"
+        self.state = "default"
+        self.selected = False
 
     def draw(self, screen):
         screen.blit(self.image, (self.x, self.y))
         pygame.draw.rect(screen, self.hitboxColor, self.hitbox, 2)
+
+    def update(self):
+        if self.state == "default":
+            self.image = pygame.image.load("images/light/traffic_light.png")
+        elif self.state == "red":
+            self.image = pygame.image.load("images/light/traffic_light_red.png")
+        elif self.state == "yellow":
+            self.image = pygame.image.load("images/light/traffic_light_yellow.png")
+        elif self.state == "green":
+            self.image = pygame.image.load("images/light/traffic_light_green.png")
+        self.image = pygame.transform.scale(self.image, (self.width, self.height))
 
