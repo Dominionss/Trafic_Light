@@ -4,10 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a251fb4b-3b2d-40a7-a7ce-2ea0d16c5a4d" name="Changes" comment="Logo, caption, selected_list">
+    <list default="true" id="a251fb4b-3b2d-40a7-a7ce-2ea0d16c5a4d" name="Changes" comment="Start of controller">
+      <change afterPath="$PROJECT_DIR$/button.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/buttons/pause_not_pressed.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/buttons/pause_pressed.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/buttons/play_1x_not_pressed.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/buttons/play_1x_pressed.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/buttons/play_2x_not_pressed.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/buttons/play_2x_pressed.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/traffic_light.py" beforeDir="false" afterPath="$PROJECT_DIR$/traffic_light.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +95,7 @@
       <workItem from="1701186977169" duration="678000" />
       <workItem from="1701296688508" duration="1906000" />
       <workItem from="1701353586609" duration="1717000" />
-      <workItem from="1701379680984" duration="2215000" />
+      <workItem from="1701379680984" duration="6420000" />
     </task>
     <task id="LOCAL-00001" summary="Start">
       <created>1701187072643</created>
@@ -146,7 +153,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701381280446</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Start of controller">
+      <created>1701382141722</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1701382141722</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -172,9 +186,10 @@
     <MESSAGE value="placing traffic lights" />
     <MESSAGE value="Collide point of mouse and traffic lights" />
     <MESSAGE value="Logo, caption, selected_list" />
-    <option name="LAST_COMMIT_MESSAGE" value="Logo, caption, selected_list" />
+    <MESSAGE value="Start of controller" />
+    <option name="LAST_COMMIT_MESSAGE" value="Start of controller" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Trafic_Light$main.coverage" NAME="main Coverage Results" MODIFIED="1701381888660" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Trafic_Light$main.coverage" NAME="main Coverage Results" MODIFIED="1701388538360" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

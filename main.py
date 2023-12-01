@@ -1,5 +1,6 @@
 import pygame
 from traffic_light import TrafficLight
+from controller import Controller
 
 pygame.init()
 
@@ -20,6 +21,9 @@ traffic_light_3 = TrafficLight(100, 450)
 traffic_light_4 = TrafficLight(460, 500)
 TrafficLights = [traffic_light_1, traffic_light_2, traffic_light_3, traffic_light_4]
 
+controller = Controller()
+controller.place(WIDTH - controller.width, 0)
+
 while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -31,6 +35,8 @@ while True:
                     if traffic_light.hitbox.collidepoint(mouse_x, mouse_y):
                         traffic_light.hitboxColor = "green"
                         traffic_light.selected = True
+                controller.click(mouse_x, mouse_y)
+
             elif event.button == 3:
                 for traffic_light in TrafficLights:
                     traffic_light.hitboxColor = "purple"
@@ -52,6 +58,8 @@ while True:
 
     pygame.display.update()
     screen.blit(MAP, (0, 0))
+    controller.draw(screen)
+    controller.update()
 
     for traffic_light in TrafficLights:
         traffic_light.draw(screen)
