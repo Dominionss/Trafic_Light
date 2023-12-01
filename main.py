@@ -21,7 +21,7 @@ traffic_light_3 = TrafficLight(100, 450)
 traffic_light_4 = TrafficLight(460, 500)
 TrafficLights = [traffic_light_1, traffic_light_2, traffic_light_3, traffic_light_4]
 
-controller = Controller()
+controller = Controller(TrafficLights)
 controller.place(WIDTH - controller.width, 0)
 
 while True:

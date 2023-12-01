@@ -3,9 +3,11 @@ from button import Button
 
 
 class Controller:
-    def __init__(self):
+    def __init__(self, traffic_lights):
+        self.traffic_lights = traffic_lights
         self.x = 0
         self.y = 0
+        self.counter = 0
         self.width = 195
         self.height = 70
         self.body = pygame.Rect(self.x, self.y, self.width, self.height)
@@ -30,9 +32,20 @@ class Controller:
         self.play_2x_button = Button(self.body.x + 130, self.body.y + 5, "play_2x")
         self.buttons = [self.pause_button, self.play_1x_button, self.play_2x_button]
 
+    def start(self):
+        self.traffic_lights[0].change_state("red")
+        self.traffic_lights[1].change_state("green")
+        self.traffic_lights[2].change_state("green")
+        self.traffic_lights[3].change_state("red")
+
     def update(self):
         for button in self.buttons:
             button.update()
+        '''
+        if self.play_1x_button.pressed and self.counter == 0:
+            self.counter += 1
+            self.start()
+        '''
 
     def click(self, mouse_x, mouse_y):
         for button in self.buttons:

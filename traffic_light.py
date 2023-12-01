@@ -1,4 +1,5 @@
 import pygame
+import timer
 
 
 class TrafficLight:
@@ -14,6 +15,7 @@ class TrafficLight:
         self.hitboxColor = "purple"
         self.state = "default"
         self.selected = False
+        self.timer = 0
 
     def draw(self, screen):
         screen.blit(self.image, (self.x, self.y))
