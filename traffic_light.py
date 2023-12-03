@@ -34,3 +34,16 @@ class TrafficLight:
 
     def change_state(self, new_state):
         self.state = new_state
+
+    def work_process(self):
+        self.timer += 0.1
+        print(self.timer)
+
+        if int(self.timer) == 10:
+            self.change_state("red")
+        elif int(self.timer) == 20:
+            self.change_state("yellow")
+        elif int(self.timer) == 30:
+            self.change_state("green")
+        elif int(self.timer) == 40:
+            self.timer = 10

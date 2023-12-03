@@ -65,3 +65,4 @@ while True:
         traffic_light.draw(screen)
         traffic_light.update()
 
+    traffic_light_1.work_process()
