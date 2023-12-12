@@ -64,5 +64,5 @@ while True:
     for traffic_light in TrafficLights:
         traffic_light.draw(screen)
         traffic_light.update()
-
-    traffic_light_1.work_process()
+        if controller.state == "play_1x" or controller.state == "play_2x":
+            traffic_light.work_process()

@@ -37,7 +37,6 @@ class TrafficLight:
 
     def work_process(self):
         self.timer += 0.1
-        print(self.timer)
 
         if int(self.timer) == 10:
             self.change_state("red")

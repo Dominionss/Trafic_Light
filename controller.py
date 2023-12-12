@@ -34,18 +34,21 @@ class Controller:
 
     def start(self):
         self.traffic_lights[0].change_state("red")
+        self.traffic_lights[0].timer = 0
         self.traffic_lights[1].change_state("green")
+        self.traffic_lights[1].timer = 0
         self.traffic_lights[2].change_state("green")
+        self.traffic_lights[2].timer = 0
         self.traffic_lights[3].change_state("red")
+        self.traffic_lights[3].timer = 0
 
     def update(self):
         for button in self.buttons:
             button.update()
-        '''
+
         if self.play_1x_button.pressed and self.counter == 0:
             self.counter += 1
             self.start()
-        '''
 
     def click(self, mouse_x, mouse_y):
         for button in self.buttons:
