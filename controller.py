@@ -33,13 +33,13 @@ class Controller:
         self.buttons = [self.pause_button, self.play_1x_button, self.play_2x_button]
 
     def start(self):
-        self.traffic_lights[0].change_state("red")
+        self.traffic_lights[0].change_state("green")
         self.traffic_lights[0].timer = 0
         self.traffic_lights[1].change_state("green")
         self.traffic_lights[1].timer = 0
         self.traffic_lights[2].change_state("green")
         self.traffic_lights[2].timer = 0
-        self.traffic_lights[3].change_state("red")
+        self.traffic_lights[3].change_state("green")
         self.traffic_lights[3].timer = 0
 
     def update(self):

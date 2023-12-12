@@ -5,6 +5,7 @@ from controller import Controller
 pygame.init()
 
 WIDTH, HEIGHT = 768, 768
+FPS = 60
 
 MAP = pygame.image.load("images/crossroads.jpg")
 MAP = pygame.transform.scale(MAP, (WIDTH, HEIGHT))
@@ -23,6 +24,8 @@ TrafficLights = [traffic_light_1, traffic_light_2, traffic_light_3, traffic_ligh
 
 controller = Controller(TrafficLights)
 controller.place(WIDTH - controller.width, 0)
+
+clock = pygame.time.Clock()
 
 while True:
     for event in pygame.event.get():
@@ -56,6 +59,7 @@ while True:
                     if traffic_light.selected:
                         traffic_light.change_state("green")
 
+    clock.tick(FPS)
     pygame.display.update()
     screen.blit(MAP, (0, 0))
     controller.draw(screen)
@@ -66,3 +70,5 @@ while True:
         traffic_light.update()
         if controller.state == "play_1x" or controller.state == "play_2x":
             traffic_light.work_process()
+
+    traffic_light_1.work_process()
