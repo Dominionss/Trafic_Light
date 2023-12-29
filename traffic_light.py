@@ -3,7 +3,7 @@ import time
 
 
 class TrafficLight:
-    def __init__(self, x, y):
+    def __init__(self, x, y, start_time):
         self.x = x
         self.y = y
         self.width = 153
@@ -16,7 +16,7 @@ class TrafficLight:
         self.hitboxColor = "purple"
         self.state = "default"
         self.selected = False
-        self.timer = 0
+        self.timer = start_time
 
     def draw(self, screen):
         screen.blit(self.image, (self.x, self.y))
@@ -42,7 +42,6 @@ class TrafficLight:
 
     def work_process(self):
         self.timer += 0.02
-        print(self.timer)
 
         if int(self.timer) == 0:
             self.change_state("green")
@@ -55,8 +54,8 @@ class TrafficLight:
             self.change_state("yellow")
         elif int(self.timer) == 45:
             self.change_state("red")
-        elif int(self.timer) == 75:
+        elif int(self.timer) == 85:
             self.change_state("red_and_yellow")
-        elif int(self.timer) == 80:
+        elif int(self.timer) == 90:
             self.timer = 0
 

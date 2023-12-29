@@ -16,10 +16,10 @@ screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Traffic Light on CrossRoad")
 pygame.display.set_icon(logo)
 
-traffic_light_1 = TrafficLight(175, 110)
-traffic_light_2 = TrafficLight(510, 170)
-traffic_light_3 = TrafficLight(100, 450)
-traffic_light_4 = TrafficLight(460, 500)
+traffic_light_1 = TrafficLight(175, 110, 0)
+traffic_light_2 = TrafficLight(510, 170, 45)
+traffic_light_3 = TrafficLight(100, 450, 45)
+traffic_light_4 = TrafficLight(460, 500, 0)
 TrafficLights = [traffic_light_1, traffic_light_2, traffic_light_3, traffic_light_4]
 
 controller = Controller(TrafficLights)
@@ -72,3 +72,6 @@ while True:
             traffic_light.work_process()
 
     traffic_light_1.work_process()
+    traffic_light_2.work_process()
+    traffic_light_3.work_process()
+    traffic_light_4.work_process()
