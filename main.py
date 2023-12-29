@@ -1,6 +1,7 @@
 import pygame
 from traffic_light import TrafficLight
 from controller import Controller
+from field import Field
 
 pygame.init()
 
@@ -21,6 +22,12 @@ traffic_light_2 = TrafficLight(510, 170, 45)
 traffic_light_3 = TrafficLight(100, 450, 45)
 traffic_light_4 = TrafficLight(460, 500, 0)
 TrafficLights = [traffic_light_1, traffic_light_2, traffic_light_3, traffic_light_4]
+
+field1 = Field(-40, 310, 50, 150)
+field2 = Field(310, -40, 150, 50)
+field3 = Field(WIDTH - 10, 310, 50, 150)
+field4 = Field(310, HEIGHT - 10, 150, 50)
+fields = [field1, field2, field3, field4]
 
 controller = Controller(TrafficLights)
 controller.place(WIDTH - controller.width, 0)
@@ -77,3 +84,6 @@ while True:
             controller.change_speed_in_traffic_lights(0)
 
     print(traffic_light_1.timer)
+
+    for field in fields:
+        field.place(screen)
