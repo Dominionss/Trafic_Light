@@ -17,6 +17,7 @@ class TrafficLight:
         self.state = "default"
         self.selected = False
         self.timer = start_time
+        self.speed = 0
 
     def draw(self, screen):
         screen.blit(self.image, (self.x, self.y))
@@ -40,8 +41,11 @@ class TrafficLight:
     def change_state(self, new_state):
         self.state = new_state
 
+    def change_speed(self, new_speed):
+        self.speed = new_speed
+
     def work_process(self):
-        self.timer += 0.02
+        self.timer += (0.02 * self.speed)
 
         if int(self.timer) == 0:
             self.change_state("green")

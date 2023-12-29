@@ -68,10 +68,12 @@ while True:
     for traffic_light in TrafficLights:
         traffic_light.draw(screen)
         traffic_light.update()
-        if controller.state == "play_1x" or controller.state == "play_2x":
-            traffic_light.work_process()
+        traffic_light.work_process()
+        if controller.state == "play_1x":
+            controller.change_speed_in_traffic_lights(1)
+        elif controller.state == "play_2x":
+            controller.change_speed_in_traffic_lights(2)
+        else:
+            controller.change_speed_in_traffic_lights(0)
 
-    traffic_light_1.work_process()
-    traffic_light_2.work_process()
-    traffic_light_3.work_process()
-    traffic_light_4.work_process()
+    print(traffic_light_1.timer)
