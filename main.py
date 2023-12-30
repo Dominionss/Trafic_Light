@@ -2,6 +2,7 @@ import pygame
 from traffic_light import TrafficLight
 from controller import Controller
 from field import Field
+from car import Car
 
 pygame.init()
 
@@ -34,6 +35,10 @@ controller.place(WIDTH - controller.width, 0)
 
 clock = pygame.time.Clock()
 
+car = Car(430, 660)
+
+path = []
+
 while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -46,6 +51,8 @@ while True:
                         traffic_light.hitboxColor = "green"
                         traffic_light.selected = True
                 controller.click(mouse_x, mouse_y)
+
+                path.append((mouse_x, mouse_y))
 
             elif event.button == 3:
                 for traffic_light in TrafficLights:
@@ -83,7 +90,13 @@ while True:
         else:
             controller.change_speed_in_traffic_lights(0)
 
-    print(traffic_light_1.timer)
-
     for field in fields:
         field.place(screen)
+
+    car.draw(screen)
+    print(path)
+    car.move()
+
+    for point in path:
+        rect = pygame.Rect(point[0], point[1], 10, 10)
+        pygame.draw.rect(screen, "purple", rect)
