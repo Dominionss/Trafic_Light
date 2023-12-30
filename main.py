@@ -35,7 +35,7 @@ controller.place(WIDTH - controller.width, 0)
 
 clock = pygame.time.Clock()
 
-car = Car(430, 660)
+car = Car(430, 760)
 
 path = []
 
@@ -94,9 +94,9 @@ while True:
         field.place(screen)
 
     car.draw(screen)
-    print(path)
-    car.move()
+    car.update()
 
+    print(path)
     for point in path:
         rect = pygame.Rect(point[0], point[1], 10, 10)
         pygame.draw.rect(screen, "purple", rect)
