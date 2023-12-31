@@ -1,11 +1,32 @@
 import pygame
 import os
 import math
+from random import choice
 
 
 bottom_to_right = [(430, 729), (430, 533), (473, 475), (530, 430), (600, 420), (650, 416), (723, 415), (780, 414)]
 bottom_to_left = [(430, 693), (430, 499), (427, 390), (397, 320), (290, 308), (178, 308), (25, 309), (-20, 308)]
 bottom_to_top = [(430, 693), (430, 499), (430, 200), (430, 50), (430, -50)]
+bottom = [bottom_to_left, bottom_to_top, bottom_to_right]
+
+top_to_bottom = [(315, 56), (315, 271), (315, 509), (315, 696), (315, 820)]
+top_to_left = [(315, 175), (283, 234), (180, 300), (100, 305), (17, 305)]
+top_to_right = [(315, 102), (315, 211), (315, 329), (356, 425), (463, 415), (597, 415), (740, 415), (800, 415)]
+top = [top_to_left, top_to_right, top_to_bottom]
+
+left_to_top = [(150, 415), (278, 415), (392, 399), (425, 273), (425, 137), (425, 31), (425, -30)]
+left_to_right = [(150, 415), (278, 415), (500, 415), (700, 415), (800, 415)]
+left_to_bottom = [(163, 415), (270, 455), (320, 550), (318, 600), (315, 700), (315, 750), (315, 850)]
+left = [left_to_top, left_to_right, left_to_bottom]
+
+right_to_top = [(711, 307), (547, 307), (457, 231), (425, 69), (425, -50)]
+right_to_bottom = [(611, 308), (466, 308), (356, 348), (315, 460), (315, 608), (315, 752), (315, 850)]
+right_to_left = [(770, 308), (466, 308), (250, 308), (100, 308), (-100, 308)]
+right = [right_to_top, right_to_bottom, right_to_left]
+
+all_places = ["left", "right", "top", "bottom"]
+all_paths = {"left": left, "right": right, "top": top, "bottom": bottom}
+all_sides = {"left": (-30, 415, 270), "right": (770, 305, 90), "top": (315, -40, 180), "bottom": (430, 760, 0)}
 
 cars_images = []
 for car in os.listdir("images/cars"):
@@ -19,23 +40,27 @@ def blit_rotate_center(win, image, top_left, angle):
 
 
 class Car:
-    def __init__(self, x, y):
+    def __init__(self):
         self.width = 25
         self.height = 50
         self.image = cars_images[0]
         self.image = pygame.transform.scale(self.image, (self.width, self.height))
-        self.x, self.y = x, y
-        self.hit_box = pygame.Rect(self.x, self.y, self.width, self.height)
-        self.velocity = 1
-        self.rotation_vel = 3
 
-        self.path = [(430, 693), (430, 499), (430, 200), (430, 50), (430, -50)]
+        self.velocity = 1
+        self.rotation_vel = 2
+
+        self.place = choice(all_places)
+        self.start = all_sides[self.place]
+        self.side = all_paths[self.place]
+        self.path = choice(self.side)
         self.current_point = 0
-        self.angle = 0
+        self.angle = self.start[2]
+        self.x, self.y = self.start[0], self.start[1]
+        self.hit_box = pygame.Rect(self.x, self.y, self.width, self.height)
 
     def draw(self, screen):
         blit_rotate_center(screen, self.image, (self.x, self.y), self.angle)
-        self.draw_path(screen)
+        # self.draw_path(screen)
 
     def draw_path(self, screen):
         for point in self.path:
