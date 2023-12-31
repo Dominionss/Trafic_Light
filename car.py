@@ -43,7 +43,7 @@ class Car:
     def __init__(self):
         self.width = 25
         self.height = 50
-        self.image = cars_images[0]
+        self.image = choice(cars_images)
         self.image = pygame.transform.scale(self.image, (self.width, self.height))
 
         self.velocity = 1
