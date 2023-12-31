@@ -58,6 +58,8 @@ class Car:
         self.x, self.y = self.start[0], self.start[1]
         self.hit_box = pygame.Rect(self.x, self.y, self.width, self.height)
 
+        self.state = "go"
+
     def draw(self, screen):
         blit_rotate_center(screen, self.image, (self.x, self.y), self.angle)
         # self.draw_path(screen)
@@ -68,7 +70,8 @@ class Car:
 
     def update(self):
         self.hit_box = pygame.Rect(self.x, self.y, self.width, self.height)
-        self.move()
+        if self.state == "go":
+            self.move()
 
     def calculate_angle(self):
         target_x, target_y = self.path[self.current_point]
